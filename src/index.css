@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: "Noto Sans JP", sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #61AE98;
+        /* color: #ccc; */
+        top: initial;
+        bottom: 0;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        content: "";
+    }
+
+    .swiper-pagination {
+        --swiper-pagination-color: #61AE98;
+        position: relative !important;
+    }
+}
+
+@layer utilities {
+    .menu {
+        @apply relative tracking-[1px];
+    }
+    .menu::after {
+        @apply content-[''] bg-[#fff] h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-500;
+    }
+    .menu:hover::after {
+        @apply w-[100%];
+    }
+
+    .menu-ex {
+        @apply relative tracking-[1px];
+    }
+    .menu-ex ::after {
+        @apply content-[''] bg-[#4D5665] h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-500;
+    }
+    .menu-ex :hover::after {
+        @apply w-[100%];
+    }
+
+
+    .button {
+        @apply transform duration-500;
+    }
+    .button:hover {
+        @apply transform duration-500 translate-x-3;
+    }
+
+    .button-evo {
+        @apply transform duration-500;
+    }
+    .button-evo:hover {
+        @apply transform duration-500 -translate-y-2;
+    }
+
+    .menu-evo {
+        @apply relative tracking-[1px];
+    }
+    .menu-evo::after {
+        @apply content-[''] bg-[#fff] h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-500;
+    }
+    .menu-evo:hover::after {
+        @apply w-[100%];
+    }
+
+    .button-reset {
+        @apply p-0 border-none outline-none bg-none text-start;
+    }
+}
